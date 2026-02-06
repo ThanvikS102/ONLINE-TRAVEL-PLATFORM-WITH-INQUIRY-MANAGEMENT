@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    padding: 80px;
+    text-align: center;
+    background: #0d6efd;
+    color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    background: #ff6f00;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.page {
+    padding: 40px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.form input, .form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.login-box {
+    width: 300px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">🛠 Admin Panel</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/packages">Packages</a>
+        <a href="/admin">Admin</a>
+    </div>
+</nav>
+
+<h2 class="section-title">Manage Travel Packages</h2>
+
+<!-- ADD PACKAGE FORM -->
+<div class="page">
+    <h3>Add New Package</h3>
+
+    <form method="post" action="/admin/add" class="form">
+        <input name="fromPlace" placeholder="From Place" required>
+        <input name="toPlace" placeholder="To Place" required>
+        <input type="number" name="duration" placeholder="Duration (days)" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <button class="btn">Add Package</button>
+    </form>
+</div>
+
+<!-- PACKAGE LIST -->
+<h3 class="section-title">Existing Packages</h3>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Route</th>
+        <th>Duration</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="pkg : ${packages}">
+        <td th:text="${pkg.id}"></td>
+        <td th:text="${pkg.fromPlace} + ' → ' + ${pkg.toPlace}"></td>
+        <td th:text="${pkg.duration} + ' days'"></td>
+        <td th:text="'₹' + ${pkg.price}"></td>
+        <td>
+            <a th:href="@{'/admin/delete/' + ${pkg.id}}" class="btn">Delete</a>
+        </td>
+    </tr>
+</table>
+
+<footer class="footer">
+    © 2026 TravelEase Admin
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin | Inquiries</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2 class="section-title">Customer Inquiries</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+    </tr>
+    <tr th:each="inq : ${inquiries}">
+        <td th:text="${inq.name}"></td>
+        <td th:text="${inq.email}"></td>
+        <td th:text="${inq.message}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TravelEase | Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">✈️ TravelEase</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/packages">Packages</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/login">Login</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <h1>Discover Incredible India </h1>
+    <p>Book curated travel experiences</p>
+</header>
+
+<h2 class="section-title">Available Travel Packages</h2>
+
+<div class="card-container">
+    <div class="card" th:each="pkg : ${packages}">
+        <img th:src="@{'/images/' + ${#strings.toLowerCase(pkg.toPlace)} + '.jpg'}">
+        <div class="card-body">
+            <h3 th:text="${pkg.fromPlace != null ? pkg.fromPlace : 'Source'} 
+    + ' → ' + 
+    ${pkg.toPlace != null ? pkg.toPlace : 'Destination'}">
+</h3>
+
+            <p th:text="${pkg.description}"></p>
+            <p><b>Duration:</b> <span th:text="${pkg.duration}"></span> days</p>
+            <p><b>Price:</b> ₹<span th:text="${pkg.price}"></span></p>
+            <a th:href="@{'/book/' + ${pkg.id}}" class="btn">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    © 2026 TravelEase
+</footer>
+
+</body>
+</html>

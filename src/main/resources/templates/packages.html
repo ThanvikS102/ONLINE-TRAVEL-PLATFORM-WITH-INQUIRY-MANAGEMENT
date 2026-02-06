@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Travel Packages</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">✈️ TravelEase</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/packages">Packages</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<h2 class="section-title">All Packages</h2>
+
+<div class="card-container">
+    <div class="card" th:each="pkg : ${packages}">
+        <img th:src="@{'/images/' + ${#strings.toLowerCase(pkg.toPlace)} + '.jpg'}">
+        <div class="card-body">
+            <h3 th:text="${pkg.fromPlace} + ' → ' + ${pkg.toPlace}"></h3>
+            <p th:text="${pkg.description}"></p>
+            <p><b>₹</b> <span th:text="${pkg.price}"></span></p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">© 2026 TravelEase</footer>
+
+</body>
+</html>
